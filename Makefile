@@ -35,5 +35,13 @@ clean:
 
 ci: clean check test
 
+<<<<<<< HEAD
 count: build ## count the source files
 	@ls -1 $(SRC_DIR)/*.txt | wc -l
+=======
+count: build ## report how many words were built
+	@wc -w $(OUTPUTS) | tail -1
+>>>>>>> feature/word-count
+count: build ## report source files and built words
+	@ls -1 $(SRC_DIR)/*.txt | wc -l
+	@wc -w $(OUTPUTS) | tail -1
